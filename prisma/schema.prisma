@@ -1,0 +1,50 @@
+// prisma/schema.prisma
+
+// Ini adalah konfigurasi untuk koneksi ke database
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://postgres:maungapain@db.mclnrnjjrvhhiyifguol.supabase.co:5432/postgres"
+}
+
+// Di sinilah kita mendefinisikan tabel-tabel kita
+model Customer {
+  id        Int      @id @default(autoincrement())
+  nama      String
+  no_wa     String
+  email     String
+  tgl_lahir String? // Tanda '?' berarti field ini boleh kosong (optional)
+  catatan   String?
+  createdAt DateTime @default(now()) // Waktu pembuatan otomatis
+  updatedAt DateTime @updatedAt     // Waktu update otomatis
+}
+
+
+// prisma/schema.prisma
+
+// ... (model Customer ada di atas)
+
+model Employee {
+  id                  Int      @id @default(autoincrement())
+  nama                String
+  jabatan             String
+  gajiPokok           Decimal
+  tglMasuk            DateTime @default(now())
+  status              String   @default("Aktif")
+
+  // Field yang sudah ditambahkan sebelumnya
+  agama               String?
+  tglLahir            DateTime?
+  pendidikanTerakhir  String?
+  alamat              String?
+  keterangan          String?
+
+  // Field baru untuk status pernikahan
+  statusPernikahan    String? // Boleh kosong, contoh: "Single", "Sudah Menikah", "Pernah Menikah"
+
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+}
