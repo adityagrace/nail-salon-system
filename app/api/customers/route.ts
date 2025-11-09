@@ -25,7 +25,7 @@ export async function GET(request: Request) {
       ? {
           nama: {
             contains: searchTerm,
-            mode: 'Prisma.QueryMode.insensitive', // Membuat pencarian tidak case-sensitive (huruf besar/kecil sama)
+            mode: Prisma.QueryMode.insensitive, // Membuat pencarian tidak case-sensitive (huruf besar/kecil sama)
           },
         }
       : {};

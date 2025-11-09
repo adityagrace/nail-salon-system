@@ -18,7 +18,7 @@ export async function GET(request: Request) {
       ? {
           nama: {
             contains: searchTerm,
-            mode: 'Prisma.QueryMode.insensitive',
+            mode: Prisma.QueryMode.insensitive,
           },
         }
       : {};
