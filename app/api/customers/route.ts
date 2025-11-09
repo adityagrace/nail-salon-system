@@ -3,7 +3,7 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '../../prisma'; // Path relatif ke file prisma.ts
 
-//const prisma = new PrismaClient();
+
 
 // app/api/customers/route.ts
 
