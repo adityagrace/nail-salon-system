@@ -1,7 +1,7 @@
 // app/api/customers/route.ts
 
 import { NextResponse } from 'next/server';
-import { prisma } from '../../prisma'; // Path relatif ke file prisma.ts
+import { prisma } from '../../../prisma'; // BENAR // Path relatif ke file prisma.ts
 
 
 
