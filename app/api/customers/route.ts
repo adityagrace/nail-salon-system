@@ -1,7 +1,8 @@
 // app/api/customers/route.ts
 
 import { NextResponse } from 'next/server';
-import { prisma } from '../../../prisma'; // BENAR // Path relatif ke file prisma.ts
+import { Prisma, prisma } from '@prisma/client'; // <--- Tambahkan Prisma dari @prisma/client
+import { Prisma } from '../../../prisma'; // <--- HAPUS BARIS INI, JIKA ADA
 
 
 
