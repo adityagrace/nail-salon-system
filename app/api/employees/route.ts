@@ -2,6 +2,7 @@
 
 import { NextResponse } from 'next/server';
 import { PrismaClient } from '@prisma/client';
+import { PrismaClient, Prisma } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
@@ -18,7 +19,7 @@ export async function GET(request: Request) {
       ? {
           nama: {
             contains: searchTerm,
-            mode: 'insensitive',
+            mode: 'Prisma.QueryMode.insensitive',
           },
         }
       : {};
