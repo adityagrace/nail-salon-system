@@ -1,8 +1,9 @@
 // app/api/employees/route.ts
 
 import { NextResponse } from 'next/server';
-import { Prisma, prisma } from '@prisma/client'; // <--- Tambahkan Prisma dari @prisma/client
-import { Prisma } from '../../../prisma'; // <--- HAPUS BARIS INI, JIKA ADA
+//import { prisma } from '../../../prisma';
+import { prisma } from "@/prisma";
+
 
 
 
@@ -19,7 +20,7 @@ export async function GET(request: Request) {
       ? {
           nama: {
             contains: searchTerm,
-            mode: Prisma.QueryMode.insensitive,
+            
           },
         }
       : {};

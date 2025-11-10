@@ -1,8 +1,9 @@
 // app/api/customers/route.ts
 
 import { NextResponse } from 'next/server';
-import { Prisma, prisma } from '@prisma/client'; // <--- Tambahkan Prisma dari @prisma/client
-import { Prisma } from '../../../prisma'; // <--- HAPUS BARIS INI, JIKA ADA
+//import { prisma } from '../../../prisma';
+import { prisma } from "@/prisma";
+
 
 
 
@@ -26,7 +27,7 @@ export async function GET(request: Request) {
       ? {
           nama: {
             contains: searchTerm,
-            mode: Prisma.QueryMode.insensitive, // Membuat pencarian tidak case-sensitive (huruf besar/kecil sama)
+             // Membuat pencarian tidak case-sensitive (huruf besar/kecil sama)
           },
         }
       : {};

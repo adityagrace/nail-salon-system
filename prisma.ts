@@ -1,8 +1,8 @@
-// prisma.ts (di folder utama proyek)
+// prisma.ts
 
 import { PrismaClient } from '@prisma/client';
 
-const globalForPrisma = globalThis as unknown as {
+const globalForPrisma = global as unknown as {
   prisma: PrismaClient | undefined;
 };
 
@@ -12,4 +12,6 @@ export const prisma =
     log: ['query'],
   });
 
-if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma;
+if (process.env.NODE_ENV !== 'production') {
+  globalForPrisma.prisma = prisma;
+}
