@@ -7,6 +7,29 @@ import EmployeeList from './EmployeeList'; // Impor komponen tabel karyawan
 import EmployeeModal from './EmployeeModal'; // Impor komponen modal karyawan
 import { Employee } from './EmployeeList'; // Impor interface Employee
 
+export interface Employee {
+  id:               Int ;    
+  nama:              String;
+  jabatan:            String;
+  gajiPokok:           Decimal;
+  tglMasuk:            DateTime;
+  status:              String;
+
+  // Field yang sudah ditambahkan sebelumnya
+  agama?:               String;
+  tglLahir?:            DateTime;
+  pendidikanTerakhir?:  String;
+  alamat?:             String;
+  keterangan?:          String;
+
+  // Field baru untuk status pernikahan
+  statusPernikahan?:    String; // Boleh kosong, contoh: "Single", "Sudah Menikah", "Pernah Menikah"
+
+  createdAt:          DateTime;
+  updatedAt:           DateTime;
+}
+
+
 export default function EmployeesPage() {
   const [employees, setEmployees] = useState<Employee[]>([]);
   const [totalCount, setTotalCount] = useState(0);

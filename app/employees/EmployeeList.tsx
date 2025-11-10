@@ -2,7 +2,7 @@
 
 'use client';
 import React, { useState } from 'react';
-import { Employee } from './EmployeeList';
+import type { Employee } from './page';
 
 export default function EmployeeList({ 
   employees, 
