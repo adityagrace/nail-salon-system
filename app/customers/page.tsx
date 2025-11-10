@@ -52,7 +52,7 @@ export default function CustomersPage() {
   // filteredCustomers tidak lagi dibutuhkan, karena server sudah melakukan filtering
   // const filteredCustomers = ... (HAPUS BAGIAN INI)
 
-  const handleAddCustomer = async (newCustomerData: Omit<Customer, 'id'>) => {
+  const handleAddCustomer = async (newCustomerData: Omit<Customer, 'id'|'createdAt'>) => {
     try {
       await fetch('/api/customers', {
         method: 'POST',
@@ -84,7 +84,7 @@ export default function CustomersPage() {
     setIsModalOpen(true);
   };
 
-  const handleUpdateCustomer = async (id: number, updatedData: Omit<Customer, 'id'>) => {
+  const handleUpdateCustomer = async (id: number, updatedData: Omit<Customer, 'id'|'createdAt'>) => {
     try {
       await fetch(`/api/customers/${id}`, {
         method: 'PUT',
