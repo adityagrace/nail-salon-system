@@ -13,6 +13,7 @@ export interface Customer {
   email: string;
   tgl_lahir: string;
   catatan: string;
+  createdAt: string;
 }
 
 export default function CustomersPage() {

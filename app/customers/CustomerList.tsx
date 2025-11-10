@@ -64,7 +64,8 @@ export default function CustomerList({
               </td>
                    
               <td className="py-4 px-6 text-sm text-gray-900 border-r border-gray-300">
-                {customer.createdAt}
+                {new Date(customer.createdAt).toLocaleDateString("id-ID")}
+
               </td>
               <td className="py-4 px-6 text-sm text-gray-600 border-r border-gray-300">
                 {customer.catatan}
