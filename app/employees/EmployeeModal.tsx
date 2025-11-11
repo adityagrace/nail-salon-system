@@ -2,8 +2,11 @@
 
 'use client';
 
+import type { Employee } from './types';
+
+
 import { useState, useEffect } from 'react';
-import type { Employee } from './page'; // Impor interface dari EmployeeList
+//import type { Employee } from './page'; // Impor interface dari EmployeeList
 
 // Interface untuk data karyawan baru (tanpa id, createdAt, updatedAt)
 interface NewEmployeeData {

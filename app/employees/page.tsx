@@ -2,10 +2,13 @@
 
 'use client';
 
+
+
 import { useState, useEffect } from 'react';
 import EmployeeList from './EmployeeList'; // Impor komponen tabel karyawan
 import EmployeeModal from './EmployeeModal'; // Impor komponen modal karyawan
-import { Employee } from './EmployeeList'; // Impor interface Employee
+import type { Employee } from './types';
+//import { Employee } from './EmployeeList'; // Impor interface Employee
 
 export interface Employee {
   id:               Int ;    
