@@ -9,21 +9,21 @@ import { Employee } from './EmployeeList'; // Impor interface Employee
 
 export interface Employee {
   id:               Int ;    
-  nama:              String;
-  jabatan:            String;
+  nama:              string;
+  jabatan:            string;
   gajiPokok:           Decimal;
   tglMasuk:            DateTime;
-  status:              String;
+  status:              string;
 
   // Field yang sudah ditambahkan sebelumnya
-  agama?:               String;
+  agama?:               string;
   tglLahir?:            DateTime;
-  pendidikanTerakhir?:  String;
-  alamat?:             String;
-  keterangan?:          String;
+  pendidikanTerakhir?:  string;
+  alamat?:             string;
+  keterangan?:          string;
 
   // Field baru untuk status pernikahan
-  statusPernikahan?:    String; // Boleh kosong, contoh: "Single", "Sudah Menikah", "Pernah Menikah"
+  statusPernikahan?:    string; // Boleh kosong, contoh: "Single", "Sudah Menikah", "Pernah Menikah"
 
   createdAt:          DateTime;
   updatedAt:           DateTime;
