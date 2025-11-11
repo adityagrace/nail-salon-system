@@ -7,7 +7,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = "postgresql://postgres:maungapain@db.mclnrnjjrvhhiyifguol.supabase.co:5432/postgres"
+   url      = env("DATABASE_URL")
 }
 
 // Di sinilah kita mendefinisikan tabel-tabel kita
