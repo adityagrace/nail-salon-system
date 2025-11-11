@@ -10,27 +10,6 @@ import EmployeeModal from './EmployeeModal'; // Impor komponen modal karyawan
 import type { Employee } from './types';
 //import { Employee } from './EmployeeList'; // Impor interface Employee
 
-export interface Employee {
-  id:               Int ;    
-  nama:              string;
-  jabatan:            string;
-  gajiPokok:           Decimal;
-  tglMasuk:            DateTime;
-  status:              string;
-
-  // Field yang sudah ditambahkan sebelumnya
-  agama?:               string;
-  tglLahir?:            DateTime;
-  pendidikanTerakhir?:  string;
-  alamat?:             string;
-  keterangan?:          string;
-
-  // Field baru untuk status pernikahan
-  statusPernikahan?:    string; // Boleh kosong, contoh: "Single", "Sudah Menikah", "Pernah Menikah"
-
-  createdAt:          DateTime;
-  updatedAt:           DateTime;
-}
 
 
 export default function EmployeesPage() {
