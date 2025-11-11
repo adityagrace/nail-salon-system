@@ -1,14 +1,19 @@
 // app/api/customers/[id]/route.ts
 
 import { NextResponse } from 'next/server';
-import { PrismaClient } from '@prisma/client';
+import { prisma } from "@/prisma";
 
-const prisma = new PrismaClient();
+
+
+//import { PrismaClient } from '@prisma/client';
+
+//const prisma = new PrismaClient();
 
 // Fungsi DELETE (sudah ada)
 export async function DELETE(
   request: Request,
-  { params }: { params: Promise<{ id: string }> }
+  { params }: { params: { id: string } }
+
 ) {
   try {
     const { id } = await params;
