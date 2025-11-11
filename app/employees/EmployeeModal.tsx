@@ -19,6 +19,8 @@ interface NewEmployeeData {
   alamat: string;
   keterangan: string;
   statusPernikahan: string;
+  status: string;
+
 }
 
 export default function EmployeeModal({ 
@@ -45,6 +47,7 @@ export default function EmployeeModal({
     alamat: '',
     keterangan: '',
     statusPernikahan: '',
+    status: '',
   });
 
   // useEffect untuk mengisi form jika ada data karyawan (mode edit)
@@ -60,6 +63,8 @@ export default function EmployeeModal({
         alamat: employee.alamat || '',
         keterangan: employee.keterangan || '',
         statusPernikahan: employee.statusPernikahan || '',
+        status: employee.status || '',
+
       });
     } else {
       // Kosongkan form untuk mode tambah
@@ -73,6 +78,7 @@ export default function EmployeeModal({
         alamat: '',
         keterangan: '',
         statusPernikahan: '',
+        status: '',
       });
     }
   }, [employee, isOpen]);
@@ -145,6 +151,28 @@ export default function EmployeeModal({
               <input type="text" id="keterangan" name="keterangan" value={formData.keterangan} onChange={handleChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" />
             </div>
           </div>
+
+          {/*tambahan status option*/}
+          <div>
+             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="status">
+              Status Karyawan
+            </label>
+                   <select
+                      id="status"
+                      name="status"
+                      value={formData.status}
+                      onChange={handleChange}
+                   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+                      <option value="">-- Pilih --</option>
+                      <option value="Aktif">Aktif</option>
+                      <option value="Nonaktif">Nonaktif</option>
+                  </select>
+          </div>
+
+
+
+
           {/* Alamat menggunakan lebar penuh */}
           <div>
             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="alamat">Alamat Domisili</label>
