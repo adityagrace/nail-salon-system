@@ -21,7 +21,7 @@ export async function DELETE(
 
     return NextResponse.json(null, { status: 204 });
   } catch (error) {
-    console.error("DELETE error:", error);
+    console.error("DELETE customer error:", error);
     return NextResponse.json(
       { error: "Error deleting customer" },
       { status: 500 }
@@ -45,12 +45,14 @@ export async function PUT(
 
     const updatedCustomer = await prisma.customer.update({
       where: { id: customerId },
-      data: body, // langsung update semua field
+      data: {
+        ...body,
+      },
     });
 
-    return NextResponse.json(updatedCustomer, { status: 200 });
+    return NextResponse.json(updatedCustomer);
   } catch (error) {
-    console.error("PUT error:", error);
+    console.error("PUT customer error:", error);
     return NextResponse.json(
       { error: "Error updating customer" },
       { status: 500 }
